@@ -1,0 +1,14 @@
+<%# <%= link_to "Create new article", "articles/new", class: "new-article" %>
+
+<div class="container">
+  <ul>
+    <% @articles.each do |article| %>
+    <li>
+      <h2><%= link_to article.title, article_path(article), class: "article-title" %></h2>
+      <p><%= article.content %></p>
+      <%# <%= link_to '<i class="fa-solid fa-pen-to-square"></i>'.html_safe, edit_article_path(article) %>
+      <%# <%= link_to '<i class="fa-regular fa-trash-can"></i>'.html_safe, article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+  </ul>
+</div>
